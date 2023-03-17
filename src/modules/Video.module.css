@@ -1,0 +1,19 @@
+.video-info {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+}
+.video-description {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    line-height: 1.1;
+}
+.video-description strong {
+    font-size:1.2rem;
+    color: black;
+}
+.video-description span {
+    color: #797979;
+    font-size: 0.8rem
+}
