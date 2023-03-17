@@ -7,6 +7,7 @@ export const videos = [
     date: "2 days ago",
     title: "Transformers 7",
     username: "KinoCheck.com",
+    video: "https://bafybeihpprysv4vl7fw75rdfn62zf63rbg3cly47v4pbco6zwjtwst7ouy.ipfs.cf-ipfs.com"
   },
   {
     thumbnail: "https://picsum.photos/seed/2/200/300",
@@ -16,6 +17,7 @@ export const videos = [
     date: "2 days ago",
     title: "Transformers 7",
     username: "KinoCheck.com",
+    video: "https://bafybeihpprysv4vl7fw75rdfn62zf63rbg3cly47v4pbco6zwjtwst7ouy.ipfs.cf-ipfs.com"
   },
   {
     thumbnail: "https://picsum.photos/seed/3/200/300",
@@ -25,6 +27,7 @@ export const videos = [
     date: "2 days ago",
     title: "Transformers 7",
     username: "KinoCheck.com",
+    video: "https://bafybeihpprysv4vl7fw75rdfn62zf63rbg3cly47v4pbco6zwjtwst7ouy.ipfs.cf-ipfs.com"
   },
   {
     thumbnail: "https://picsum.photos/seed/4/200/300",
@@ -34,6 +37,7 @@ export const videos = [
     date: "2 days ago",
     title: "Transformers 7",
     username: "KinoCheck.com",
+    video: "https://bafybeihpprysv4vl7fw75rdfn62zf63rbg3cly47v4pbco6zwjtwst7ouy.ipfs.cf-ipfs.com"
   },
   {
     thumbnail: "https://picsum.photos/seed/5/200/300",
@@ -43,6 +47,7 @@ export const videos = [
     date: "2 days ago",
     title: "Transformers 7",
     username: "KinoCheck.com",
+    video: "https://bafybeihpprysv4vl7fw75rdfn62zf63rbg3cly47v4pbco6zwjtwst7ouy.ipfs.cf-ipfs.com"
   },
   {
     thumbnail: "https://picsum.photos/seed/6/200/300",
@@ -52,6 +57,7 @@ export const videos = [
     date: "2 days ago",
     title: "Transformers 7",
     username: "KinoCheck.com",
+    video: "https://bafybeihpprysv4vl7fw75rdfn62zf63rbg3cly47v4pbco6zwjtwst7ouy.ipfs.cf-ipfs.com"
   },
   {
     thumbnail: "https://picsum.photos/seed/7/200/300",
@@ -61,6 +67,7 @@ export const videos = [
     date: "2 days ago",
     title: "Transformers 7",
     username: "KinoCheck.com",
+    video: "https://bafybeihpprysv4vl7fw75rdfn62zf63rbg3cly47v4pbco6zwjtwst7ouy.ipfs.cf-ipfs.com"
   },
   {
     thumbnail: "https://picsum.photos/seed/8/200/300",
@@ -70,6 +77,7 @@ export const videos = [
     date: "2 days ago",
     title: "Transformers 7",
     username: "KinoCheck.com",
+    video: "https://bafybeihpprysv4vl7fw75rdfn62zf63rbg3cly47v4pbco6zwjtwst7ouy.ipfs.cf-ipfs.com"
   },
   {
     thumbnail: "https://picsum.photos/seed/9/200/300",
@@ -79,6 +87,7 @@ export const videos = [
     date: "2 days ago",
     title: "Transformers 7",
     username: "KinoCheck.com",
+    video: "https://bafybeihpprysv4vl7fw75rdfn62zf63rbg3cly47v4pbco6zwjtwst7ouy.ipfs.cf-ipfs.com"
   },
   {
     thumbnail: "https://picsum.photos/seed/10/200/300",
@@ -88,6 +97,7 @@ export const videos = [
     date: "2 days ago",
     title: "Transformers 7",
     username: "KinoCheck.com",
+    video: "https://bafybeihpprysv4vl7fw75rdfn62zf63rbg3cly47v4pbco6zwjtwst7ouy.ipfs.cf-ipfs.com"
   },
   {
     thumbnail: "https://picsum.photos/seed/11/200/300",
@@ -97,6 +107,7 @@ export const videos = [
     date: "2 days ago",
     title: "Transformers 7",
     username: "KinoCheck.com",
+    video: "https://bafybeihpprysv4vl7fw75rdfn62zf63rbg3cly47v4pbco6zwjtwst7ouy.ipfs.cf-ipfs.com"
   },
   
 ];

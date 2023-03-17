@@ -1,0 +1,26 @@
+.video-page {
+    padding-inline: 5%;
+    display: flex;
+    justify-content: space-between;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+.video-page main {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+.video-page strong {
+    font-size: 2rem;
+}
+.video-user-info {
+    display: flex;
+    gap: 1rem;
+    color: black;
+    font-size: 1rem;
+    align-items: center;
+}
+.video-user-info em {
+    font-style: normal;
+    font-weight: bold;
+}
