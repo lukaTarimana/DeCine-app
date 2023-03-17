@@ -3,6 +3,7 @@ import classes from "./modules/App.module.css";
 import { BrowserRouter as Router, Routes, Route, Link, BrowserRouter } from "react-router-dom";
 import  Home from "./pages/home/Home";
 import { videos } from "./dummyArrays";
+import VideoPage from "./pages/videos/VideoPage";
 // import Layout from "./components/layout/Layout";
 
 const App = () => {
@@ -13,6 +14,7 @@ const App = () => {
       <Routes>
         <Route path="/about">{/* <About /> */}</Route>
         <Route path="/users">{/* <Users /> */}</Route>
+        <Route path="/videos/:videoId" element={<VideoPage />} >{/* <Users /> */}</Route>
         <Route path="/" element={<Home items={videos} />}></Route>
       </Routes>
     </BrowserRouter>
