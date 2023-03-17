@@ -1,11 +1,20 @@
+import React from "react";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+// import Home from "./pages/home/Home";
+// import Layout from "./components/layout/Layout";
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header"></header>
-      <main>WEB3 JS</main>
-    </div>
+    <Router>
+      {/* A <Routes> looks through its children <Route>s and
+            renders the first one that matches the current URL. */}
+      <Routes>
+        <Route path="/about">{/* <About /> */}</Route>
+        <Route path="/users">{/* <Users /> */}</Route>
+        <Route path="/"></Route>
+      </Routes>
+    </Router>
   );
-}
+};
 
 export default App;
