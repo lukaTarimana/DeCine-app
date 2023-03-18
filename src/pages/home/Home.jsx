@@ -1,6 +1,6 @@
 import React from 'react'
 import { videos } from '../../dummyArrays'
-import List from '../list/List'
+import List from "../list/List";
 
 const Home = () => {
   return (

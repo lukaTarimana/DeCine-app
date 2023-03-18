@@ -1,5 +1,6 @@
 import React from 'react'
 import VideoPlayer from '../../components/videos/VideoPlayer';
+import VideoItems from '../../components/videos/VideoItems';
 import classes from "../../modules/VideoPage.module.css";
 import { Avatar } from '@nextui-org/react';
 import { videos } from "../../dummyArrays";
@@ -11,7 +12,7 @@ const VideoPage = (props) => {
   return (
     <div className={classes['video-page']}>
         <main>
-            <VideoPlayer src={video.video}/>
+            <VideoPlayer src={video.video} thumbnail={video.thumbnail}/>
             <strong>{video.title}</strong>
             <div className={classes['video-user-info']}>
                 <Avatar src={video.avatar}  size="md" />
@@ -19,7 +20,7 @@ const VideoPage = (props) => {
             </div>
         </main>
         <aside>
-
+          <VideoItems items={videos} />
         </aside>
     </div>
   )

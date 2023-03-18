@@ -21,6 +21,7 @@ import VideoPage from "./pages/videos/VideoPage";
 import Movies from "./pages/movies/Movies";
 import CreateVideo from "./pages/create-video/CreateVideo";
 import NotFound from "./pages/404/404";
+import Streams from "./pages/streams/Streams";
 
 const App = () => {
   const { chains, provider } = configureChains(
@@ -48,11 +49,13 @@ const App = () => {
           <Layout>
             <Routes>
               <Route path="/movies/:movieCategory" element={<Movies />} />
+              <Route exact path="/movies" element={<Movies />} />
               {/* <Movies /> */}
               <Route path="/streaming/:streamingCategory" />
+              <Route exact path="/streaming" element={<Streams />} />
               {/* <Streaming /> */}
               <Route
-                path="/videos/:videoCategory/:videoId"
+                path="/videos/:videoId"
                 element={<VideoPage />}
               />
               {/* <Users /> */}
