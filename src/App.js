@@ -46,9 +46,9 @@ const App = () => {
             renders the first one that matches the current URL. */}
           <Layout>
             <Routes>
-              <Route path="/movies/?:movieCategory" />
+              <Route path="/movies/:movieCategory" />
               {/* <Movies /> */}
-              <Route path="/streaming/?:streamingCategory" />
+              <Route path="/streaming/:streamingCategory" />
               {/* <Streaming /> */}
               <Route
                 path="/videos/:videoCategory/:videoId"
