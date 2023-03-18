@@ -5,7 +5,7 @@ import { Image } from "@nextui-org/react";
 const VideoItem = (props) => {
   const {id } = props;
   return (
-    <Link style={{minWidth: "80%"}} to={`/videos/${id}`}>
+    <Link style={{maxWidth: "80%", minWidth: "80%"}} to={`/videos/${id}`}>
       <div className={classes['video-item-div']}>
           <Image 
           height={100}
