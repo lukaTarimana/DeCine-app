@@ -1,19 +1,26 @@
-.video-info {
+.video-div {
+    color: white;
     display: flex;
-    gap: 1rem;
-    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+}
+.video-thumbnail {
+    box-shadow: 4px 4px 62px 0px #FFFFFF40;
+    border-radius: 1.5rem;
 }
 .video-description {
     display: flex;
-    flex-direction: column;
-    gap: 0.4rem;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
     line-height: 1.1;
 }
 .video-description strong {
-    font-size:1.2rem;
-    color: black;
+    font-size:1rem;
+    color: inherit;
 }
 .video-description span {
-    color: #797979;
+    color: rgba(255, 255, 255, 0.31);
     font-size: 0.8rem
 }

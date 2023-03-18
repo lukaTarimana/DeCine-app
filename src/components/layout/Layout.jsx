@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Navbar, Button, Link, Text, styled, Spacer } from "@nextui-org/react";
+import { Navbar,  Link, Text, styled, Spacer } from "@nextui-org/react";
 import { useLocation } from "react-router-dom";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 
@@ -48,6 +48,7 @@ const Layout = ({ children }) => {
           left: 0,
           backgroundColor: "#000",
           color: "white",
+          borderBottom: "2px solid #505050",
         }}
       >
         <Navbar.Brand>
@@ -73,7 +74,7 @@ const Layout = ({ children }) => {
             </Navbar.Link>
           ))}
         </Navbar.Content>
-        <Navbar.Content>
+        <Navbar.Content css={{backgroundColor: "transparent"}}>
           {/* <Navbar.Link color="inherit" href="#">
             Login
           </Navbar.Link>

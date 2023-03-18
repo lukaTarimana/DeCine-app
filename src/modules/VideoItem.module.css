@@ -1,0 +1,25 @@
+.video-item-div {
+    display: flex;
+    gap: 0.5rem;
+}
+.video-item-image {
+    border-radius: 1rem;
+    min-width: 70%;
+    height: 100px;
+}
+.video-item-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 0.5rem;
+}
+.video-item-info  strong {
+    font-size:1rem !important;
+    text-decoration: none;
+    color: white;
+}
+.video-item-info  span {
+    font-size:0.8rem;
+    color:#FFFFFF4F;
+    text-decoration: none;
+}
