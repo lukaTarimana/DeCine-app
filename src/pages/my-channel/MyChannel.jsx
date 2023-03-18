@@ -11,6 +11,8 @@ import {
 } from "@nextui-org/react";
 import { useAccount } from "wagmi";
 import "./styles.css";
+import UserList from "../list/UserList";
+import {videos} from "../../dummyArrays";
 
 const dummyProfile = {
   // channelName: "John Doe",
@@ -60,12 +62,12 @@ const MyChannel = () => {
   };
 
   return (
-    <Container>
+    <Container style={{padding: "0"}}>
       <Row>
         <Image
           css={{
             borderRadius: "16px",
-            maxW: "1400px",
+            maxW: "100%",
             maxH: "269px",
             objectFit: "cover",
           }}
@@ -132,7 +134,9 @@ const MyChannel = () => {
           )}
         </div>
       </Row>
-      <Row>videos</Row>
+      <Row>
+        <UserList items={videos}/>
+      </Row>
       <Modal
         closeButton
         aria-labelledby="modal-title"
