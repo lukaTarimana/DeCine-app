@@ -4,7 +4,7 @@ import { Card, Link, Image, Avatar } from "@nextui-org/react";
 
 const Video = (props) => {
   return (
-    <Link href={`/videos/${props.id}`}>
+    <Link href={`/videos/${props.category}/${props.id}`}>
       <Card>
         <Card.Header css={{ width: "unset" }}>
           <Image
