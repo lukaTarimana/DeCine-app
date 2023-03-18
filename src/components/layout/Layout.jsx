@@ -83,7 +83,7 @@ const Layout = ({ children }) => {
               Sign Up
             </Button>
           </Navbar.Item> */}
-          <ConnectButton />
+          <ConnectButton chainStatus={"none"} showBalance={false} />
         </Navbar.Content>
         <Navbar.Collapse
           css={{
@@ -91,6 +91,7 @@ const Layout = ({ children }) => {
             position: "absolute",
             backgroundColor: "#000",
             overflowY: "none",
+            height: isNavbarVisible && "calc(100vh - 76px)",
           }}
           isOpen={isNavbarVisible}
         >
