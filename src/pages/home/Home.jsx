@@ -16,6 +16,7 @@ const Home = (props) => {
               username={item.username}
               views={item.views}
               date={item.date}
+              category={item?.category || "All"}
               id={i}
             />
           </Grid>
