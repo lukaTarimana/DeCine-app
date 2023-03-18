@@ -31,7 +31,6 @@ const navigationItems = [
     categories: ["Gaming", "Study", "DIY", "ASMR", "Unboxing", "Review"],
     id: 3,
   },
-  { title: "Subscribed", link: "/subscribed", id: 4 },
 ];
 
 const Layout = ({ children }) => {
@@ -96,23 +95,46 @@ const Layout = ({ children }) => {
           }}
           isOpen={isNavbarVisible}
         >
+          <Navbar.Content
+            enableCursorHighlight
+            showIn="xs"
+            css={{ flexDirection: "column", padding: "0" }}
+          >
+            {navigationItems.map((item) => (
+              <Navbar.Link
+                isActive={item.link === location.pathname}
+                href={item.link}
+                key={item.id}
+              >
+                {item.title}
+              </Navbar.Link>
+            ))}
+          </Navbar.Content>
           {navigationItems.map((item, index) => {
             if (item.link === location.pathname && !!item.categories) {
-              return item.categories.map((category, index) => (
-                <Navbar.CollapseItem key={index} hidden={!isNavbarVisible}>
-                  <Link
-                    color="inherit"
-                    css={{
-                      minWidth: "50%",
-                    }}
-                    href="#"
-                  >
-                    {category}
-                  </Link>
-                </Navbar.CollapseItem>
-              ));
-            } else {
-              return null;
+              return (
+                <>
+                  <Spacer
+                    y={1}
+                    x={0}
+                    css={{ borderTop: "1px solid #fff", width: "100%" }}
+                  />
+                  <Spacer y={1} x={0} />
+                  {item.categories.map((category, index) => (
+                    <Navbar.CollapseItem key={index} hidden={!isNavbarVisible}>
+                      <Link
+                        color="inherit"
+                        css={{
+                          minWidth: "50%",
+                        }}
+                        href="#"
+                      >
+                        {category}
+                      </Link>
+                    </Navbar.CollapseItem>
+                  ))}
+                </>
+              );
             }
           })}
           <Spacer

@@ -21,6 +21,7 @@ import VideoPage from "./pages/videos/VideoPage";
 import Movies from "./pages/movies/Movies";
 import CreateVideo from "./pages/create-video/CreateVideo";
 import NotFound from "./pages/404/404";
+import MyChannel from "./pages/my-channel/MyChannel";
 import Streams from "./pages/streams/Streams";
 
 const App = () => {
@@ -35,7 +36,7 @@ const App = () => {
   });
 
   const wagmiClient = createClient({
-    autoConnect: false,
+    autoConnect: true,
     connectors,
     provider,
   });
@@ -60,7 +61,8 @@ const App = () => {
               />
               {/* <Users /> */}
 
-              <Route path="/create-video" element={<CreateVideo />} />
+              {/* <Route path="/create-video" element={<CreateVideo />} /> */}
+              <Route path="/channel/:channelId" element={<MyChannel />} />
               <Route path="/" element={<Home items={videos} />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
