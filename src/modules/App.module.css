@@ -1,3 +1,7 @@
 html {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
+body {
+  background: linear-gradient(71.92deg, #001C1A 3.01%, rgba(0, 17, 43, 0.79) 133.34%) !important; 
+    color: white;
+}

@@ -1,9 +1,9 @@
 .line {
   background-color: #fff !important;
 }
-.nextui-c-jklhtj,
 .nextui-navbar-container {
-  background-color: #000 !important;
+  /* background-color: #000 !important; */
+  background: linear-gradient(71.92deg, #001C1A 3.01%, rgba(0, 17, 43, 0.79) 133.34%) !important; 
 }
 
 .nextui-link {

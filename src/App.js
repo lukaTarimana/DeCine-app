@@ -14,6 +14,7 @@ import classes from "./modules/App.module.css";
 import Home from "./pages/home/Home";
 import { videos } from "./dummyArrays";
 import VideoPage from "./pages/videos/VideoPage";
+import Movies from "./pages/movies/Movies";
 
 const App = () => {
   const { chains, provider } = configureChains(
@@ -40,7 +41,7 @@ const App = () => {
             renders the first one that matches the current URL. */}
           <Layout>
             <Routes>
-              <Route path="/movies">{/* <Movies /> */}</Route>
+              <Route path="/movies" element={<Movies />}>{/* <Movies /> */}</Route>
               <Route path="/streaming">{/* <Streaming /> */}</Route>
               <Route path="/videos/:videoId" element={<VideoPage />}>
                 {/* <Users /> */}
