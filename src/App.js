@@ -18,6 +18,7 @@ import { videos } from "./dummyArrays";
 
 import Home from "./pages/home/Home";
 import VideoPage from "./pages/videos/VideoPage";
+import Videos from "./pages/videos/Videos";
 import Movies from "./pages/movies/Movies";
 import CreateVideo from "./pages/create-video/CreateVideo";
 import NotFound from "./pages/404/404";
@@ -58,6 +59,11 @@ const App = () => {
               <Route
                 path="/videos/:videoId"
                 element={<VideoPage />}
+              />
+              <Route
+                exact
+                path="/videos"
+                element={<Videos/>}
               />
               {/* <Users /> */}
 
