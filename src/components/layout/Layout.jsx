@@ -34,7 +34,7 @@ const navigationItems = [
   { title: "Subscribed", link: "/subscribed", id: 4 },
 ];
 
-const Layout = () => {
+const Layout = ({ children }) => {
   const location = useLocation();
   const [isNavbarVisible, setIsNavbarVisible] = useState(false);
   console.log(navigationItems, "here 1");
@@ -56,10 +56,12 @@ const Layout = () => {
             onChange={(e) => setIsNavbarVisible(e)}
             aria-label="toggle navigation"
           />
-          <AcmeLogo />
-          <Text b color="inherit" hideIn="xs">
-            ACME
-          </Text>
+          <Link href="/">
+            <AcmeLogo />
+            <Text b color="inherit" hideIn="xs">
+              ACME
+            </Text>
+          </Link>
         </Navbar.Brand>
         <Navbar.Content enableCursorHighlight hideIn="xs" variant="underline">
           {navigationItems.map((item) => (
@@ -139,7 +141,7 @@ const Layout = () => {
           position: "relative",
         }}
       >
-        <Text h2>Lorem ipsum dolor sit amet</Text>
+        {/* <Text h2>Lorem ipsum dolor sit amet</Text>
         <Text size="$lg">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Purus
@@ -223,7 +225,8 @@ const Layout = () => {
           dignissim. Erat imperdiet sed euismod nisi. Risus in hendrerit gravida
           rutrum quisque non tellus orci ac.
         </Text>
-        <Spacer y={1} />
+        <Spacer y={1} /> */}
+        {children}
       </Box>
     </LayoutWrapper>
   );

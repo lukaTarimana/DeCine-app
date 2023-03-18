@@ -10,6 +10,10 @@ import { publicProvider } from "wagmi/providers/public";
 
 import Layout from "./components/layout/Layout";
 import "./styles.css";
+import classes from "./modules/App.module.css";
+import Home from "./pages/home/Home";
+import { videos } from "./dummyArrays";
+import VideoPage from "./pages/videos/VideoPage";
 
 const App = () => {
   const { chains, provider } = configureChains(
@@ -38,8 +42,10 @@ const App = () => {
             <Routes>
               <Route path="/movies">{/* <Movies /> */}</Route>
               <Route path="/streaming">{/* <Streaming /> */}</Route>
-              <Route path="/videos">{/* <Videos /> */}</Route>
-              <Route path="/">{/*<Home/> */}</Route>
+              <Route path="/videos/:videoId" element={<VideoPage />}>
+                {/* <Users /> */}
+              </Route>
+              <Route path="/" element={<Home items={videos} />}></Route>
             </Routes>
           </Layout>
         </Router>
