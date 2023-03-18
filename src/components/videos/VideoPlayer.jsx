@@ -1,12 +1,14 @@
 import React from 'react';
 import classes from "../../modules/VideoPlayer.module.css";
+import { DefaultPlayer as Video } from 'react-html5video';
+import "react-html5video/dist/styles.css";
 
 const VideoPlayer = (props) => {
   return (
-    <div>
-        <video className={classes['video']} controls autoPlay name="media">
+    <div className={classes['video']} >
+        <Video  poster={props.thumbnail} name="media">
             <source src={props.src} type="video/mp4" />
-        </video>
+        </Video>
     </div>
   )
 }
