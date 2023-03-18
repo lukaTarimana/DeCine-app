@@ -18,6 +18,7 @@ import { videos } from "./dummyArrays";
 
 import Home from "./pages/home/Home";
 import VideoPage from "./pages/videos/VideoPage";
+import Movies from "./pages/movies/Movies";
 import CreateVideo from "./pages/create-video/CreateVideo";
 import NotFound from "./pages/404/404";
 
@@ -46,7 +47,7 @@ const App = () => {
             renders the first one that matches the current URL. */}
           <Layout>
             <Routes>
-              <Route path="/movies/:movieCategory" />
+              <Route path="/movies/:movieCategory" element={<Movies />} />
               {/* <Movies /> */}
               <Route path="/streaming/:streamingCategory" />
               {/* <Streaming /> */}
