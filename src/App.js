@@ -48,6 +48,7 @@ const App = () => {
           <Layout>
             <Routes>
               <Route path="/movies/:movieCategory" element={<Movies />} />
+              <Route exact path="/movies/" element={<Movies />} />
               {/* <Movies /> */}
               <Route path="/streaming/:streamingCategory" />
               {/* <Streaming /> */}
