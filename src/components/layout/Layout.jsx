@@ -4,6 +4,7 @@ import { useLocation } from "react-router-dom";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 
 import "./layout.css";
+import { DeCineLogo } from "../UI/Icons";
 
 const subscribedChannels = [
   "MrBeast",
@@ -51,19 +52,19 @@ const Layout = ({ children }) => {
           borderBottom: "2px solid #505050",
         }}
       >
-        <Navbar.Brand>
+        <Navbar.Brand style={{display: "flex", gap:"3rem"}}>
           <Navbar.Toggle
             onChange={(e) => setIsNavbarVisible(e)}
             aria-label="toggle navigation"
           />
-          <Link href="/">
-            <AcmeLogo />
+          <Link href="/" style={{display: "flex", gap:"0.5rem"}}>
+            <DeCineLogo width={30} height={30} />
             <Text b color="inherit" hideIn="xs">
-              DeCine
+               DeCine
             </Text>
           </Link>
         </Navbar.Brand>
-        <Navbar.Content enableCursorHighlight hideIn="xs" variant="underline">
+        <Navbar.Content activeColor={"error"} enableCursorHighlight hideIn="xs" variant="underline">
           {navigationItems.map((item) => (
             <Navbar.Link
               isActive={item.link === location.pathname}
@@ -83,7 +84,7 @@ const Layout = ({ children }) => {
               Sign Up
             </Button>
           </Navbar.Item> */}
-          <ConnectButton chainStatus={"none"} showBalance={false} />
+          <ConnectButton style={{backgroundColor: "#F31260"}} chainStatus={"none"} showBalance={false} />
         </Navbar.Content>
         <Navbar.Collapse
           css={{
@@ -165,6 +166,7 @@ const Layout = ({ children }) => {
           marginLeft: isNavbarVisible ? "200px" : "0",
           "@xsMax": { px: "$10" },
           position: "relative",
+          transition: "0.5s",
         }}
       >
         {children}
