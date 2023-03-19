@@ -9,7 +9,9 @@
     rgba(0, 17, 43, 0.79) 133.34%
   ) !important;
 }
-
+.nextui-c-egxOLa {
+  min-width: 100%;
+}
 .nextui-c-jklhtj {
   background-color: unset !important;
 }
@@ -30,4 +32,10 @@
 
 .navbar-subtitle {
   font-size: 24px;
+}
+.iekbcc9  {
+  background-color: #F31260 !important;
+}
+.nextui-c-iTPCAT {
+  background: #001c1a 3.01%;
 }

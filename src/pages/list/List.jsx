@@ -1,4 +1,4 @@
-import React from "react";
+import "../../modules/List.css";
 import { Grid, Input } from "@nextui-org/react";
 import Video from "../../components/videos/Video";
 import { useLocation } from "react-router-dom";

@@ -5,6 +5,7 @@ import { ConnectButton } from "@rainbow-me/rainbowkit";
 import { useAccount } from "wagmi";
 
 import "./layout.css";
+import { DeCineLogo } from "../UI/Icons";
 
 const subscribedChannels = [
   {
@@ -65,19 +66,19 @@ const Layout = ({ children }) => {
           borderBottom: "2px solid #505050",
         }}
       >
-        <Navbar.Brand>
+        <Navbar.Brand style={{display: "flex", gap:"3rem"}}>
           <Navbar.Toggle
             onChange={(e) => setIsNavbarVisible(e)}
             aria-label="toggle navigation"
           />
-          <Link href="/">
-            <AcmeLogo />
+          <Link href="/" style={{display: "flex", gap:"0.5rem"}}>
+            <DeCineLogo width={30} height={30} />
             <Text b color="inherit" hideIn="xs">
-              DeCine
+               DeCine
             </Text>
           </Link>
         </Navbar.Brand>
-        <Navbar.Content hideIn="xs" variant="underline">
+        <Navbar.Content activeColor={"error"} enableCursorHighlight hideIn="xs" variant="underline">
           {navigationItems.map((item) => (
             <Navbar.Link
               isActive={item.link === location.pathname}
@@ -97,8 +98,8 @@ const Layout = ({ children }) => {
               Sign Up
             </Button>
           </Navbar.Item> */}
-          <ConnectButton chainStatus={"none"} showBalance={false} />
-          {address && (
+          <ConnectButton style={{backgroundColor: "#F31260"}} chainStatus={"none"} showBalance={false} />
+           {address && (
             <Link href={`/channel/${address}`}>
               <div>My Channel</div>
             </Link>
@@ -185,6 +186,7 @@ const Layout = ({ children }) => {
           marginLeft: isNavbarVisible ? "200px" : "0",
           "@xsMax": { px: "$10" },
           position: "relative",
+          transition: "0.5s",
         }}
       >
         {children}
