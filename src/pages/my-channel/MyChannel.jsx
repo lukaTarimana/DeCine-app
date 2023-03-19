@@ -16,10 +16,6 @@ import UserList from "../list/UserList";
 import { videos } from "../../dummyArrays";
 import { Link } from "@nextui-org/react";
 
-const dummyProfile = {
-  // channelName: "John Doe",
-};
-
 const MyChannel = () => {
   const location = useLocation();
   const [edit, setEdit] = useState(false);
@@ -152,9 +148,9 @@ const MyChannel = () => {
                 </span>
               )}
             </div>
-            <div>
+            {/* <div>
               <Link href="/create-video">Upload Video</Link>
-            </div>
+            </div> */}
           </>
         )}
       </Row>
