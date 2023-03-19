@@ -27,7 +27,6 @@ const CreateVideo = () => {
   const handleSubmit = () => {
     console.log("submited");
   };
-  fetch;
   const onChange = async (e) => {
     console.log("here 111");
     const file = e.target.files[0];
