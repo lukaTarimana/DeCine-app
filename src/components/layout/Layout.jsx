@@ -1,16 +1,29 @@
 import React, { useState } from "react";
-import { Navbar,  Link, Text, styled, Spacer } from "@nextui-org/react";
+import { Navbar, Link, Text, styled, Spacer, User } from "@nextui-org/react";
 import { useLocation } from "react-router-dom";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
+import { useAccount } from "wagmi";
 
 import "./layout.css";
 import { DeCineLogo } from "../UI/Icons";
 
 const subscribedChannels = [
-  "MrBeast",
-  "Ninja",
-  "Bedford Falls",
-  "The Net Ninja",
+  {
+    icon: "https://i.pravatar.cc/150?u=a042581f4e29026024d",
+    name: "MrBeast",
+  },
+  {
+    icon: "https://i.pravatar.cc/150?u=a042581f4e29026024d",
+    name: "Ninja",
+  },
+  {
+    icon: "https://i.pravatar.cc/150?u=a042581f4e29026024d",
+    name: "Bedford Falls",
+  },
+  {
+    icon: "https://i.pravatar.cc/150?u=a042581f4e29026024d",
+    name: "The Net Ninja",
+  },
 ];
 
 const navigationItems = [
@@ -37,7 +50,7 @@ const navigationItems = [
 const Layout = ({ children }) => {
   const location = useLocation();
   const [isNavbarVisible, setIsNavbarVisible] = useState(false);
-  console.log(navigationItems, "here 1");
+  const { address } = useAccount();
 
   return (
     <LayoutWrapper>
@@ -45,6 +58,7 @@ const Layout = ({ children }) => {
         isBordered
         css={{
           position: "fixed",
+          zIndex: 1000,
           top: 0,
           left: 0,
           backgroundColor: "#000",
@@ -75,7 +89,7 @@ const Layout = ({ children }) => {
             </Navbar.Link>
           ))}
         </Navbar.Content>
-        <Navbar.Content css={{backgroundColor: "transparent"}}>
+        <Navbar.Content css={{ backgroundColor: "transparent" }}>
           {/* <Navbar.Link color="inherit" href="#">
             Login
           </Navbar.Link>
@@ -85,6 +99,11 @@ const Layout = ({ children }) => {
             </Button>
           </Navbar.Item> */}
           <ConnectButton style={{backgroundColor: "#F31260"}} chainStatus={"none"} showBalance={false} />
+           {address && (
+            <Link href={`/channel/${address}`}>
+              <div>My Channel</div>
+            </Link>
+          )}
         </Navbar.Content>
         <Navbar.Collapse
           css={{
@@ -97,7 +116,6 @@ const Layout = ({ children }) => {
           isOpen={isNavbarVisible}
         >
           <Navbar.Content
-            enableCursorHighlight
             showIn="xs"
             css={{ flexDirection: "column", padding: "0" }}
           >
@@ -112,9 +130,12 @@ const Layout = ({ children }) => {
             ))}
           </Navbar.Content>
           {navigationItems.map((item, index) => {
-            if (item.link === location.pathname && !!item.categories) {
+            if (
+              item.link.split("/")[1] === location.pathname.split("/")[1] &&
+              !!item.categories
+            ) {
               return (
-                <>
+                <div key={index}>
                   <Spacer
                     y={1}
                     x={0}
@@ -124,17 +145,16 @@ const Layout = ({ children }) => {
                   {item.categories.map((category, index) => (
                     <Navbar.CollapseItem key={index} hidden={!isNavbarVisible}>
                       <Link
-                        color="inherit"
                         css={{
                           minWidth: "50%",
                         }}
-                        href="#"
+                        href={`${item.link}/${category.toLowerCase()}`}
                       >
                         {category}
                       </Link>
                     </Navbar.CollapseItem>
                   ))}
-                </>
+                </div>
               );
             }
           })}
@@ -153,7 +173,7 @@ const Layout = ({ children }) => {
                 }}
                 href="#"
               >
-                {item}
+                <User src={item.icon} name={item.name} size="xs" />
               </Link>
             </Navbar.CollapseItem>
           ))}

@@ -9,35 +9,39 @@ import {
   Text,
   Checkbox,
 } from "@nextui-org/react";
+import { useLocation } from "react-router-dom";
 import { useAccount } from "wagmi";
 import "./styles.css";
 import UserList from "../list/UserList";
-import {videos} from "../../dummyArrays";
+import { videos } from "../../dummyArrays";
+import { Link } from "@nextui-org/react";
 
 const dummyProfile = {
   // channelName: "John Doe",
 };
 
 const MyChannel = () => {
+  const location = useLocation();
   const [edit, setEdit] = useState(false);
   const [changeBackground, setChangeBackground] = useState(false);
   const [background, setBackground] = useState(
     "https://picsum.photos/1400/269"
   );
   const { address, isConnected } = useAccount();
-  const [name, setName] = useState(dummyProfile?.channelName || address);
+  const channelAddress = location.pathname.split("/")[2];
+  const [name, setName] = useState(dummyProfile?.channelName || channelAddress);
 
   const handleSave = () => {
     setEdit(false);
   };
   const handleCancel = () => {
     setEdit(false);
-    setName(dummyProfile?.channelName || address);
+    setName(dummyProfile?.channelName || channelAddress);
   };
 
   useEffect(() => {
     if (isConnected) {
-      setName(dummyProfile?.channelName || address);
+      setName(dummyProfile?.channelName || channelAddress);
     } else {
       setName("");
     }
@@ -62,7 +66,7 @@ const MyChannel = () => {
   };
 
   return (
-    <Container style={{padding: "0"}}>
+    <Container style={{ padding: "0" }}>
       <Row>
         <Image
           css={{
@@ -75,26 +79,28 @@ const MyChannel = () => {
           src={background}
           alt="Background photo"
         />
-        <span
-          style={{
-            cursor: "pointer",
-            position: "absolute",
-            right: "10px",
-            bottom: "10px",
-            backgroundColor: "#000",
-            width: "15px",
-            height: "15px",
-            padding: "5px",
-            borderRadius: "40%",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            color: "white",
-          }}
-          onClick={() => setChangeBackground((prev) => !prev)}
-        >
-          &#9998;
-        </span>
+        {address === channelAddress && (
+          <span
+            style={{
+              cursor: "pointer",
+              position: "absolute",
+              right: "10px",
+              bottom: "10px",
+              backgroundColor: "#000",
+              width: "15px",
+              height: "15px",
+              padding: "5px",
+              borderRadius: "40%",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              color: "white",
+            }}
+            onClick={() => setChangeBackground((prev) => !prev)}
+          >
+            &#9998;
+          </span>
+        )}
       </Row>
       <Row align="center" css={{ marginTop: "30px", marginLeft: "10px" }}>
         <Image
@@ -115,27 +121,45 @@ const MyChannel = () => {
           value={name}
           onChange={(e) => setName(e.target.value)}
         />
-        <div style={{ marginLeft: "20px" }}>
-          {edit ? (
-            <div
-              style={{ display: "flex", flexDirection: "row", gap: "0 15px" }}
-            >
-              <Button size={"xs"} onClick={handleCancel} color={"secondary"}>
-                cancel
-              </Button>
-              <Button size={"xs"} onClick={handleSave}>
-                Save
-              </Button>
+        {address === channelAddress && (
+          <>
+            <div style={{ marginLeft: "20px" }}>
+              {edit ? (
+                <div
+                  style={{
+                    display: "flex",
+                    flexDirection: "row",
+                    gap: "0 15px",
+                  }}
+                >
+                  <Button
+                    size={"xs"}
+                    onClick={handleCancel}
+                    color={"secondary"}
+                  >
+                    cancel
+                  </Button>
+                  <Button size={"xs"} onClick={handleSave}>
+                    Save
+                  </Button>
+                </div>
+              ) : (
+                <span
+                  style={{ cursor: "pointer" }}
+                  onClick={() => setEdit(true)}
+                >
+                  &#9998;
+                </span>
+              )}
             </div>
-          ) : (
-            <span style={{ cursor: "pointer" }} onClick={() => setEdit(true)}>
-              &#9998;
-            </span>
-          )}
-        </div>
+            <div>
+              <Link href="/create-video">Upload Video</Link>
+            </div>
+          </>
+        )}
       </Row>
       <Row>
-        <UserList items={videos}/>
+        <UserList items={videos} />
       </Row>
       <Modal
         closeButton

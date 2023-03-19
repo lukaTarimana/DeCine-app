@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import { getDefaultWallets, RainbowKitProvider } from "@rainbow-me/rainbowkit";
 
 import { configureChains, createClient, WagmiConfig } from "wagmi";
-import { mainnet, polygon, optimism, arbitrum } from "wagmi/chains";
+import { bsc, bscTestnet } from "wagmi/chains";
 import { alchemyProvider } from "wagmi/providers/alchemy";
 import { publicProvider } from "wagmi/providers/public";
 
@@ -31,10 +31,9 @@ const App = () => {
     type: "dark",
   });
 
-
   const { chains, provider } = configureChains(
-    [mainnet, polygon, optimism, arbitrum],
-    [alchemyProvider({ apiKey: process.env.ALCHEMY_ID }), publicProvider()]
+    [bsc, bscTestnet],
+    [publicProvider()]
   );
 
   const { connectors } = getDefaultWallets({
@@ -49,7 +48,7 @@ const App = () => {
   });
 
   return (
-    <NextUIProvider theme={darkTheme} >
+    <NextUIProvider theme={darkTheme}>
       <WagmiConfig client={wagmiClient}>
         <RainbowKitProvider chains={chains}>
           <Router>
@@ -67,7 +66,7 @@ const App = () => {
                 <Route path="/videos/:videoId" element={<VideoPage />} />
                 {/* <Users /> */}
 
-                {/* <Route path="/create-video" element={<CreateVideo />} /> */}
+                <Route path="/create-video" element={<CreateVideo />} />
                 <Route path="/channel/:channelId" element={<MyChannel />} />
                 <Route path="/" element={<Home items={videos} />} />
                 <Route path="*" element={<NotFound />} />
