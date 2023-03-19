@@ -25,7 +25,7 @@ const MyChannel = () => {
   const [edit, setEdit] = useState(false);
   const [changeBackground, setChangeBackground] = useState(false);
   const [background, setBackground] = useState(
-    "https://picsum.photos/1400/269"
+    "https://picsum.photos/1800/269"
   );
   const { address, isConnected } = useAccount();
   const channelAddress = location.pathname.split("/")[2];
@@ -102,7 +102,14 @@ const MyChannel = () => {
           </span>
         )}
       </Row>
-      <Row align="center" css={{ marginTop: "30px", marginLeft: "10px" }}>
+      <Row
+        align="center"
+        css={{
+          marginTop: "30px",
+          paddingBottom: "10px",
+          borderBottom: "3px solid #874f99b7",
+        }}
+      >
         <Image
           width={"fit-content"}
           css={{
@@ -120,9 +127,10 @@ const MyChannel = () => {
           readOnly={!edit}
           value={name}
           onChange={(e) => setName(e.target.value)}
+          style={{ textOverflow: "ellipsis" }}
         />
         {address === channelAddress && (
-          <>
+          <Row justify="space-between">
             <div style={{ marginLeft: "20px" }}>
               {edit ? (
                 <div
@@ -155,7 +163,7 @@ const MyChannel = () => {
             <div>
               <Link href="/create-video">Upload Video</Link>
             </div>
-          </>
+          </Row>
         )}
       </Row>
       <Row>
