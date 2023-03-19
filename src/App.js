@@ -23,8 +23,15 @@ import CreateVideo from "./pages/create-video/CreateVideo";
 import NotFound from "./pages/404/404";
 import MyChannel from "./pages/my-channel/MyChannel";
 import Streams from "./pages/streams/Streams";
+import Videos from "./pages/videos/Videos";
+import { createTheme, NextUIProvider } from "@nextui-org/react";
 
 const App = () => {
+  const darkTheme = createTheme({
+    type: "dark",
+  });
+
+
   const { chains, provider } = configureChains(
     [mainnet, polygon, optimism, arbitrum],
     [alchemyProvider({ apiKey: process.env.ALCHEMY_ID }), publicProvider()]
@@ -42,34 +49,34 @@ const App = () => {
   });
 
   return (
-    <WagmiConfig client={wagmiClient}>
-      <RainbowKitProvider chains={chains}>
-        <Router>
-          {/* A <Routes> looks through its children <Route>s and
+    <NextUIProvider theme={darkTheme} >
+      <WagmiConfig client={wagmiClient}>
+        <RainbowKitProvider chains={chains}>
+          <Router>
+            {/* A <Routes> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
-          <Layout>
-            <Routes>
-              <Route path="/movies/:movieCategory" element={<Movies />} />
-              <Route exact path="/movies" element={<Movies />} />
-              {/* <Movies /> */}
-              <Route path="/streaming/:streamingCategory" />
-              <Route exact path="/streaming" element={<Streams />} />
-              {/* <Streaming /> */}
-              <Route
-                path="/videos/:videoId"
-                element={<VideoPage />}
-              />
-              {/* <Users /> */}
+            <Layout>
+              <Routes>
+                <Route path="/movies/:movieCategory" element={<Movies />} />
+                <Route exact path="/movies" element={<Movies />} />
+                {/* <Movies /> */}
+                <Route path="/streaming/:streamingCategory" />
+                <Route exact path="/streaming" element={<Streams />} />
+                {/* <Streaming /> */}
+                <Route exact path="/videos" element={<Videos />} />
+                <Route path="/videos/:videoId" element={<VideoPage />} />
+                {/* <Users /> */}
 
-              {/* <Route path="/create-video" element={<CreateVideo />} /> */}
-              <Route path="/channel/:channelId" element={<MyChannel />} />
-              <Route path="/" element={<Home items={videos} />} />
-              <Route path="*" element={<NotFound />} />
-            </Routes>
-          </Layout>
-        </Router>
-      </RainbowKitProvider>
-    </WagmiConfig>
+                {/* <Route path="/create-video" element={<CreateVideo />} /> */}
+                <Route path="/channel/:channelId" element={<MyChannel />} />
+                <Route path="/" element={<Home items={videos} />} />
+                <Route path="*" element={<NotFound />} />
+              </Routes>
+            </Layout>
+          </Router>
+        </RainbowKitProvider>
+      </WagmiConfig>
+    </NextUIProvider>
   );
 };
 
