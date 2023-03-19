@@ -133,7 +133,6 @@ export const videos = [
       "https://bafybeihpprysv4vl7fw75rdfn62zf63rbg3cly47v4pbco6zwjtwst7ouy.ipfs.cf-ipfs.com",
   },
 ];
-// create the same array for movies
 
 export const movies = [
   {
@@ -148,6 +147,7 @@ export const movies = [
     isFeatured: true,
     video:
       "https://bafybeihpprysv4vl7fw75rdfn62zf63rbg3cly47v4pbco6zwjtwst7ouy.ipfs.cf-ipfs.com",
+    category: "Fantasy",
   },
   {
     thumbnail:
@@ -161,6 +161,7 @@ export const movies = [
     isFeatured: false,
     video:
       "https://bafybeihpprysv4vl7fw75rdfn62zf63rbg3cly47v4pbco6zwjtwst7ouy.ipfs.cf-ipfs.com",
+    category: "Comedy",
   },
   {
     thumbnail:
@@ -174,6 +175,7 @@ export const movies = [
     isFeatured: false,
     video:
       "https://bafybeihpprysv4vl7fw75rdfn62zf63rbg3cly47v4pbco6zwjtwst7ouy.ipfs.cf-ipfs.com",
+    category: "Fantasy",
   },
   {
     thumbnail:
@@ -187,6 +189,7 @@ export const movies = [
     isFeatured: false,
     video:
       "https://bafybeihpprysv4vl7fw75rdfn62zf63rbg3cly47v4pbco6zwjtwst7ouy.ipfs.cf-ipfs.com",
+    category: "Fantasy",
   },
   {
     thumbnail:
@@ -200,6 +203,7 @@ export const movies = [
     isFeatured: false,
     video:
       "https://bafybeihpprysv4vl7fw75rdfn62zf63rbg3cly47v4pbco6zwjtwst7ouy.ipfs.cf-ipfs.com",
+    category: "Action",
   },
   {
     thumbnail:
@@ -213,6 +217,7 @@ export const movies = [
     isFeatured: false,
     video:
       "https://bafybeihpprysv4vl7fw75rdfn62zf63rbg3cly47v4pbco6zwjtwst7ouy.ipfs.cf-ipfs.com",
+    category: "Fantasy",
   },
   {
     thumbnail:
@@ -226,6 +231,7 @@ export const movies = [
     isFeatured: false,
     video:
       "https://bafybeihpprysv4vl7fw75rdfn62zf63rbg3cly47v4pbco6zwjtwst7ouy.ipfs.cf-ipfs.com",
+    category: "Drama",
   },
   {
     thumbnail:
@@ -239,13 +245,13 @@ export const movies = [
     isFeatured: false,
     video:
       "https://bafybeihpprysv4vl7fw75rdfn62zf63rbg3cly47v4pbco6zwjtwst7ouy.ipfs.cf-ipfs.com",
+    category: "Fantasy",
   },
 ];
 
 export const streams = [
   {
-    thumbnail:
-      "https://images2.alphacoders.com/597/597965.jpg",
+    thumbnail: "https://images2.alphacoders.com/597/597965.jpg",
     avatar:
       "https://yt3.ggpht.com/Bxn3B2O3i3IwSLlkthvWRrVEEZVuxQKCJKEtT8__G_30lt8a7Ipyr_ZwiwJwOw4pvi5OFse6fLQ=s68-c-k-c0x00ffffff-no-rj",
     views: 1200,
@@ -257,8 +263,7 @@ export const streams = [
       "https://bafybeihpprysv4vl7fw75rdfn62zf63rbg3cly47v4pbco6zwjtwst7ouy.ipfs.cf-ipfs.com",
   },
   {
-    thumbnail:
-      "https://images8.alphacoders.com/877/877849.jpg",
+    thumbnail: "https://images8.alphacoders.com/877/877849.jpg",
     avatar:
       "https://yt3.ggpht.com/Bxn3B2O3i3IwSLlkthvWRrVEEZVuxQKCJKEtT8__G_30lt8a7Ipyr_ZwiwJwOw4pvi5OFse6fLQ=s68-c-k-c0x00ffffff-no-rj",
     views: 1200,
@@ -270,8 +275,7 @@ export const streams = [
       "https://bafybeihpprysv4vl7fw75rdfn62zf63rbg3cly47v4pbco6zwjtwst7ouy.ipfs.cf-ipfs.com",
   },
   {
-    thumbnail:
-      "https://images3.alphacoders.com/702/702620.png",
+    thumbnail: "https://images3.alphacoders.com/702/702620.png",
     avatar:
       "https://yt3.ggpht.com/Bxn3B2O3i3IwSLlkthvWRrVEEZVuxQKCJKEtT8__G_30lt8a7Ipyr_ZwiwJwOw4pvi5OFse6fLQ=s68-c-k-c0x00ffffff-no-rj",
     views: 1200,
@@ -283,8 +287,7 @@ export const streams = [
       "https://bafybeihpprysv4vl7fw75rdfn62zf63rbg3cly47v4pbco6zwjtwst7ouy.ipfs.cf-ipfs.com",
   },
   {
-    thumbnail:
-      "https://images7.alphacoders.com/941/941884.jpg",
+    thumbnail: "https://images7.alphacoders.com/941/941884.jpg",
     avatar:
       "https://yt3.ggpht.com/Bxn3B2O3i3IwSLlkthvWRrVEEZVuxQKCJKEtT8__G_30lt8a7Ipyr_ZwiwJwOw4pvi5OFse6fLQ=s68-c-k-c0x00ffffff-no-rj",
     views: 1200,
@@ -296,8 +299,7 @@ export const streams = [
       "https://bafybeihpprysv4vl7fw75rdfn62zf63rbg3cly47v4pbco6zwjtwst7ouy.ipfs.cf-ipfs.com",
   },
   {
-    thumbnail:
-      "https://images.alphacoders.com/117/1173124.jpg",
+    thumbnail: "https://images.alphacoders.com/117/1173124.jpg",
     avatar:
       "https://yt3.ggpht.com/Bxn3B2O3i3IwSLlkthvWRrVEEZVuxQKCJKEtT8__G_30lt8a7Ipyr_ZwiwJwOw4pvi5OFse6fLQ=s68-c-k-c0x00ffffff-no-rj",
     views: 1200,
@@ -322,8 +324,7 @@ export const streams = [
       "https://bafybeihpprysv4vl7fw75rdfn62zf63rbg3cly47v4pbco6zwjtwst7ouy.ipfs.cf-ipfs.com",
   },
   {
-    thumbnail:
-      "https://images.alphacoders.com/116/thumb-1920-1168382.jpg",
+    thumbnail: "https://images.alphacoders.com/116/thumb-1920-1168382.jpg",
     avatar:
       "https://yt3.ggpht.com/Bxn3B2O3i3IwSLlkthvWRrVEEZVuxQKCJKEtT8__G_30lt8a7Ipyr_ZwiwJwOw4pvi5OFse6fLQ=s68-c-k-c0x00ffffff-no-rj",
     views: 1200,
