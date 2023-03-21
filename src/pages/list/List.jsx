@@ -14,8 +14,6 @@ const List = (props) => {
   const searchRef = useRef(null);
 
   const handleSearch = () => {
-    console.log(props.items, "here");
-    // searchRef.current.value
     setSearchList([]);
     props?.items?.map((item) => {
       if (
@@ -23,12 +21,10 @@ const List = (props) => {
           ?.toLowerCase()
           .includes(searchRef?.current?.value?.toLowerCase())
       ) {
-        console.log(item, "here 3");
         setSearchList((prev) => [...prev, item]);
       }
     });
   };
-  console.log(searchList, "here 2");
 
   return (
     <Grid.Container justify="flex-start" gap={2}>
