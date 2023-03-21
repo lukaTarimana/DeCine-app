@@ -1,3 +1,4 @@
+import React, { useRef, useState } from "react";
 import "../../modules/List.css";
 import { Grid, Input } from "@nextui-org/react";
 import Video from "../../components/videos/Video";
@@ -5,11 +6,33 @@ import { useLocation } from "react-router-dom";
 import { SearchIcon } from "../../components/UI/Icons";
 
 const List = (props) => {
+  const [searchList, setSearchList] = useState(props.items || []);
+
   const location = useLocation();
   const categoryId = location?.pathname?.split("/")?.[2];
+
+  const searchRef = useRef(null);
+
+  const handleSearch = () => {
+    console.log(props.items, "here");
+    // searchRef.current.value
+    setSearchList([]);
+    props?.items?.map((item) => {
+      if (
+        item?.title
+          ?.toLowerCase()
+          .includes(searchRef?.current?.value?.toLowerCase())
+      ) {
+        console.log(item, "here 3");
+        setSearchList((prev) => [...prev, item]);
+      }
+    });
+  };
+  console.log(searchList, "here 2");
+
   return (
     <Grid.Container justify="flex-start" gap={2}>
-      {props.items.map((item, i) => {
+      {searchList?.map((item, i) => {
         if (!!categoryId && categoryId === item?.category?.toLowerCase()) {
           return (
             <>
@@ -31,13 +54,7 @@ const List = (props) => {
               {i === 0 && (
                 <Grid xs={6}>
                   <Input
-                    clearable
-                    contentRight={
-                      <SearchIcon
-                        fill="var(--nextui-colors-accents6)"
-                        size={16}
-                      />
-                    }
+                    type={"serach"}
                     contentLeftStyling={false}
                     css={{
                       w: "40%",
@@ -52,7 +69,21 @@ const List = (props) => {
                       },
                     }}
                     placeholder="Search..."
+                    ref={searchRef}
                   />
+                  <span
+                    onClick={handleSearch}
+                    style={{
+                      cursor: "pointer",
+                      height: "fit-content",
+                      margin: "auto 10px",
+                    }}
+                  >
+                    <SearchIcon
+                      fill="var(--nextui-colors-accents6)"
+                      size={16}
+                    />
+                  </span>
                 </Grid>
               )}
               <Grid
@@ -95,13 +126,7 @@ const List = (props) => {
               {i === 0 && (
                 <Grid xs={6}>
                   <Input
-                    clearable
-                    contentRight={
-                      <SearchIcon
-                        fill="var(--nextui-colors-accents6)"
-                        size={16}
-                      />
-                    }
+                    type={"serach"}
                     contentLeftStyling={false}
                     css={{
                       w: "40%",
@@ -116,7 +141,21 @@ const List = (props) => {
                       },
                     }}
                     placeholder="Search..."
+                    ref={searchRef}
                   />
+                  <span
+                    onClick={handleSearch}
+                    style={{
+                      cursor: "pointer",
+                      height: "fit-content",
+                      margin: "auto 10px",
+                    }}
+                  >
+                    <SearchIcon
+                      fill="var(--nextui-colors-accents6)"
+                      size={16}
+                    />
+                  </span>
                 </Grid>
               )}
               <Grid
