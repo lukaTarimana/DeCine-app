@@ -26,6 +26,12 @@ const List = (props) => {
     });
   };
 
+  const handleKeyDown = (event) => {
+    if (event.key === "Enter") {
+      handleSearch();
+    }
+  };
+
   return (
     <Grid.Container justify="flex-start" gap={2}>
       {searchList?.map((item, i) => {
@@ -33,23 +39,24 @@ const List = (props) => {
           return (
             <>
               {item.isFeatured ? (
-                <Grid xs={6}>
+                <Grid xs={6} key={i}>
                   <h1 style={{ alignSelf: "flex-start" }}>Featured</h1>
                 </Grid>
               ) : null}
-              {i === 1 ? (
-                <Grid xs={12}>
+              {i === 2 ? (
+                <Grid xs={12} key={i}>
                   <h1 style={{ alignSelf: "flex-start" }}> Recommended</h1>
                 </Grid>
               ) : null}
               {i === 4 ? (
-                <Grid xs={12}>
+                <Grid xs={12} key={i}>
                   <h1 style={{ alignSelf: "flex-start" }}> Trending</h1>
                 </Grid>
               ) : null}
               {i === 0 && (
-                <Grid xs={6}>
+                <Grid xs={6} key={i}>
                   <Input
+                    onKeyDown={handleKeyDown}
                     type={"serach"}
                     contentLeftStyling={false}
                     css={{
@@ -105,22 +112,22 @@ const List = (props) => {
           return (
             <>
               {item.isFeatured ? (
-                <Grid xs={6}>
+                <Grid xs={6} key={i}>
                   <h1 style={{ alignSelf: "flex-start" }}>Featured</h1>
                 </Grid>
               ) : null}
               {i === 1 ? (
-                <Grid xs={12}>
+                <Grid xs={12} key={i}>
                   <h1 style={{ alignSelf: "flex-start" }}> Recommended</h1>
                 </Grid>
               ) : null}
               {i === 4 ? (
-                <Grid xs={12}>
+                <Grid xs={12} key={i}>
                   <h1 style={{ alignSelf: "flex-start" }}> Trending</h1>
                 </Grid>
               ) : null}
               {i === 0 && (
-                <Grid xs={6}>
+                <Grid xs={6} key={i}>
                   <Input
                     type={"serach"}
                     contentLeftStyling={false}
@@ -138,6 +145,7 @@ const List = (props) => {
                     }}
                     placeholder="Search..."
                     ref={searchRef}
+                    onKeyDown={handleKeyDown}
                   />
                   <span
                     onClick={handleSearch}
