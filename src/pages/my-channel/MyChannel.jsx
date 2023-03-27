@@ -122,7 +122,9 @@ const MyChannel = () => {
           onChange={(e) => setName(e.target.value)}
         />
         {address === channelAddress && (
-          <>
+          <Row
+            style={{ justifyContent: "space-between", paddingRight: "20px" }}
+          >
             <div style={{ marginLeft: "20px" }}>
               {edit ? (
                 <div
@@ -152,10 +154,10 @@ const MyChannel = () => {
                 </span>
               )}
             </div>
-            {/* <div>
+            <div>
               <Link href="/create-video">Upload Video</Link>
-            </div> */}
-          </>
+            </div>
+          </Row>
         )}
       </Row>
       <Row>

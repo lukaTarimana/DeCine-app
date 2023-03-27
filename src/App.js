@@ -66,7 +66,7 @@ const App = () => {
                 <Route path="/videos/:videoId" element={<VideoPage />} />
                 {/* <Users /> */}
 
-                {/* <Route path="/create-video" element={<CreateVideo />} /> */}
+                <Route path="/create-video" element={<CreateVideo />} />
                 <Route path="/channel/:channelId" element={<MyChannel />} />
                 <Route path="/" element={<Home items={videos} />} />
                 <Route path="*" element={<NotFound />} />
