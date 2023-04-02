@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Navbar, Link, Text, styled, Spacer, User } from "@nextui-org/react";
 import { useLocation } from "react-router-dom";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
-import { useAccount } from "wagmi";
+import { useAccount, useSignMessage } from "wagmi";
+import { tryRegister, getUser } from "../../shared/backend/backend";
 
 import "./layout.css";
 import { DeCineLogo } from "../UI/Icons";
@@ -51,6 +52,24 @@ const Layout = ({ children }) => {
   const location = useLocation();
   const [isNavbarVisible, setIsNavbarVisible] = useState(false);
   const { address } = useAccount();
+  const { signMessageAsync } = useSignMessage()
+
+  useEffect(() => {
+    const register = async () => {
+      const result = await getUser(address);
+      const user = result.data;
+
+      if (!user) {
+        const message = { action: "register", walletAddress: address, timestamp: Date.now() };
+        const signature = await signMessageAsync({ message: JSON.stringify(message) });
+        if (!signature) return;
+        await tryRegister({ walletAddress: address, message, signature });
+      }
+    };
+
+    if (!address) return;
+    register();
+  }, [address]);
 
   return (
     <LayoutWrapper>
